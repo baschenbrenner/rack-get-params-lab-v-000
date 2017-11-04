@@ -22,6 +22,7 @@ class Application
     if req.path.match(/cart/)
       @@cart.each do |item|
         resp.write "#{item}\n"
+      end
     elsif req.path.match(/search/)
       search_term = req.params["p"]
       resp.write handle_search(search_term)
