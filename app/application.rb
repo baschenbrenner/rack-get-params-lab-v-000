@@ -53,6 +53,7 @@ class Application
       return "#{search_term} is one of our items"
       if req.path.match(/add/)
         @@cart << search_term
+      end
     else
       return "Couldn't find #{search_term}"
     end
