@@ -20,9 +20,10 @@ class Application
     elsif req.path.match(/cart/)
       if @@cart == []
         "Your cart is empty"
-      else 
-        @@cart.each do |item|
-          resp.write "#{item}\n"
+      else
+          @@cart.each do |item|
+            resp.write "#{item}\n"
+        end
       end
     else
       resp.write "Path Not Found"
@@ -51,5 +52,5 @@ class Application
       return "Couldn't find #{search_term}"
     end
   end
-  
+
 end
