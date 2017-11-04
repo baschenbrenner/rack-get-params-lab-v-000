@@ -50,10 +50,12 @@ class Application
 
   def handle_search(search_term)
     if @@items.include?(search_term)
-      return "#{search_term} is one of our items"
+      
       if req.path.match(/add/)
         @@cart << search_term
+        resp.write "added #{search_term}"
       end
+      return "#{search_term} is one of our items"
     else
       return "Couldn't find #{search_term}"
     end
