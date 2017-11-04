@@ -28,7 +28,7 @@ class Application
     elsif req.path.match(/add/)
       binding.pry
       search_term = req.params["item"]
-      resp.write handle_search(search_term)
+      resp.write handle__add_search(search_term)
     else
       resp.write "Path Not Found"
     end
@@ -63,7 +63,7 @@ class Application
   end
 
   def handle_add_search(search_term)
-    if @@items.include?(search_term) 
+    if @@items.include?(search_term)
         @@cart << search_term
         return "added #{search_term}"
     else
