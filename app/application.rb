@@ -26,7 +26,7 @@ class Application
         end
       end
     elsif req.path.match(/add/)
-      binding.pry
+      
       search_term = req.params["item"]
       resp.write handle__add_search(search_term)
     else
